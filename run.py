@@ -1,7 +1,7 @@
-
 from random import randint
 
 scores = {"computer": 0, "player": 0}
+
 
 class Board:
     """
@@ -20,25 +20,25 @@ class Board:
 
     def print(self):
         for row in self.board:
-            print("  ".join(row))
-    
+            print(" ".join(row))
+
     def guess(self, x, y):
         self.guesses.append((x, y))
-        self.board[x][y] = "X"
+        self.board[x][y] = "O"
 
-        if (x,y) in self.ships:
-            self.board[x][y] = "#"
+        if (x, y) in self.ships:
+            self.board[x][y] = "X"
             return "Hit!"
         else:
             return "Miss!"
     
     def add_ship(self, x, y, type="computer"):
         if len(self.ships) >= self.num_ships:
-           print("All ships have been added.")
+            print("All ships have been added.")
         else:
-            self.ships.append((x,y))
-            if self.type == "player"
-                self.board [x][y] = "o"
+            self.ships.append((x, y))
+            if self.type == "player":
+                self.board[x][y] = "S"
 
 
 def random_point(size):
@@ -48,19 +48,49 @@ def random_point(size):
     return randint(0, size -1)
 
 
+def valid_coordinates(x, y, board):
+    pass
+
+
+def populate_board(board):
+    while True:
+        try:
+            x = input("Enter your row choice: ")
+            if x in "123456":
+                x = int(x) -1
+                break
+        except ValueError:
+            print("Please choose a number between 1 and 6")
+    while True:
+        try:
+            y = input("Enter your column choice: ")
+            if y in "123456":
+                y = int(y) -1
+                break
+        except ValueError:
+            print("Please choose a number between 1 and 6")
+    return x, y
+
+def make_guess(board):
+    pass
+
+
+def play_game(computer_board, player_board):
+
+    pass
 
 
 def new_game():
     """
-    Starts a new game. STes the board size, number of ships, resets the 
+    Starts a new game. States the board size, number of ships, resets the
     scores and initialises the boards.
     """
 
     size = 6
-    num_ships = 4
+    num_ships= 4
     scores["computer"] = 0
     scores["player"] = 0
-    print ("~" * 40)
+    print("~" * 40)
     print("Welcome to TORPEDO!")
     print(f"Board size: {size}. Number of Ships: {num_ships}")
     print("Top left corner is row: 0, column: 0")
@@ -74,7 +104,7 @@ def new_game():
     for _ in range(num_ships):
         populate_board(player_board)
         populate_board(computer_board)
-    
+
     play_game(computer_board, player_board)
 
 
