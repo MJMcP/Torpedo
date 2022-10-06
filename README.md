@@ -54,7 +54,9 @@ This project was deployed using Code Institute's mock terminal for Heroku
 ##Credits
 - Code Insititure for the deployment terminal
 - Hasbro for the experience of playing Battleship, the tactile game this is based on.
-- https://coderspacket.com/battleship-game-in-python for further instructions to help construct the game
+- https://coderspacket.com/battleship-game-in-python for further instructions to help construct the game"
+-
+
 - 
 ## Reminders
 

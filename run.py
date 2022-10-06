@@ -32,21 +32,20 @@ class Board:
         else:
             return "Miss!"
     
-    	def add-ship(self, x, y, type="computer"):
+    def add_ship(self, x, y, type="computer"):
         if len(self.ships) >= self.num_ships:
            print("All ships have been added.")
-       else:
-         self.ships.append((x,y))
-        if self.type == "player"
-            self.board [x][y] = "o"
+        else:
+            self.ships.append((x,y))
+            if self.type == "player"
+                self.board [x][y] = "o"
+
 
 def random_point(size):
     """
     Helper function to return a random interger
     """
     return randint(0, size -1)
-
-
 
 
 
